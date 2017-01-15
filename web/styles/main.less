@@ -1,0 +1,29 @@
+@cellSize: 40px;
+@obstacleColor: blue;
+
+body {
+    background-color:  antiquewhite;
+}
+
+table {
+    border: 1px dotted red;
+    background-color: lightgreen;
+
+    tr {
+        td {
+            width: @cellSize;
+            height: @cellSize;
+        }
+    }
+}
+
+.obstacle {
+    background-color: @obstacleColor;
+}
+
+.player {
+    background-color: pink;
+    -moz-border-radius: @cellSize / 2;
+    -webkit-border-radius: @cellSize / 2;
+    border-radius: @cellSize / 2;
+}
