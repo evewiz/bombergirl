@@ -18,18 +18,6 @@
         this.getPlayerCell().addClass(playerClass);
     };
 
-    this.position = () => {
-        return this.getPlayerCell().position();
-    };
-
-    this.width = () => {
-        return this.getPlayerCell().width();
-    };
-
-    this.height = () => {
-        return this.getPlayerCell().height();
-    };
-
     this.move = (key) => {
         var targetX = this.x;
         var targetY = this.y;
@@ -52,7 +40,7 @@
     };
 
     this.putBomb = () => {
-        var bomb = new Bomb(this);
+        var bomb = new Bomb(this.board, this.x, this.y);
         bomb.put();
     };
 }
