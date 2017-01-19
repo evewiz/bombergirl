@@ -2,7 +2,7 @@
 @obstacleColor: blue;
 
 body {
-    background-color:  antiquewhite;
+    background-color: antiquewhite;
 }
 
 table {
@@ -17,6 +17,12 @@ table {
     }
 }
 
+#canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
 .obstacle {
     background-color: @obstacleColor;
 }
@@ -26,4 +32,8 @@ table {
     -moz-border-radius: @cellSize / 2;
     -webkit-border-radius: @cellSize / 2;
     border-radius: @cellSize / 2;
+}
+
+.bomb {
+    background-image: url("../images/bomb.png");
 }
