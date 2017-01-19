@@ -3,7 +3,7 @@ var directions = [
     { angle: 0, offsetX: 1, offsetY: 0 },
     { angle: 90, offsetX: 0, offsetY: 1 },
     { angle: 180, offsetX: -1, offsetY: 0 },
-    { angle: 270, offsetX: 0, offsetY: -1 }]
+    { angle: 270, offsetX: 0, offsetY: -1 }];
 
 var createBasicExplosion = (board, x, y) => {
 
