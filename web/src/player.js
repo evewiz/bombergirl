@@ -1,24 +1,29 @@
-﻿function Player(board, x, y) {
+﻿import { Bomb } from "./bomb";
 
-    const playerClass = "player";
-    const left = 37;
-    const up = 38;
-    const right = 39;
-    const down = 40;
+export class Player {
 
-    this.board = board;
-    this.x = x;
-    this.y = y;
+    constructor(board, x, y) {
+        this.board = board;
+        this.x = x;
+        this.y = y;
+    }
 
-    this.getPlayerCell = () => {
-        return board.getCell(this.x, this.y);
-    };
+    getPlayerCell() {
+        return this.board.getCell(this.x, this.y);
+    }
     
-    this.draw = () => {
+    draw() {
+        const playerClass = "player";
         this.getPlayerCell().addClass(playerClass);
-    };
+    }
 
-    this.move = (key) => {
+    move(key) {
+        const playerClass = "player";
+        const left = 37;
+        const up = 38;
+        const right = 39;
+        const down = 40;
+
         var targetX = this.x;
         var targetY = this.y;
         if (key === left) {
@@ -30,17 +35,18 @@
         } else if (key === down) {
             targetY++;
         }
-        if (board.isObstacle(targetX, targetY)) {
+        if (!this.board.canEnter(targetX, targetY)) {
             return;
         }
         this.getPlayerCell().removeClass(playerClass);
         this.x = targetX;
         this.y = targetY;
         this.getPlayerCell().addClass(playerClass);
-    };
+    }
 
-    this.putBomb = () => {
+    putBomb() {
         var bomb = new Bomb(this.board, this.x, this.y);
         bomb.put();
-    };
+        return bomb;
+    }
 }
